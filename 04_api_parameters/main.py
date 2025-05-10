@@ -1,5 +1,6 @@
-from fastapi import FastAPI, Path , Query, Body
+from fastapi import FastAPI, Path , Query, Body, Header
 from pydantic import BaseModel
+
 
 app = FastAPI()
 
@@ -23,8 +24,6 @@ async def get_user(
     
     
 #  02_query_parameter_validation   
-app = FastAPI()
-
 @app.get("/courses/")
 async def read_courses(
     topic: str | None = Query(
@@ -46,7 +45,6 @@ class Item(BaseModel):
     description: str | None = None
     price: float
 
-app = FastAPI()
 
 @app.put("/items/validated/{item_id}")
 async def update_item(
@@ -60,3 +58,11 @@ async def update_item(
     if item:
         result.update({"item": item.model_dump()})
     return result
+
+
+# 04_header_parameter
+@app.get("/items/{item_id}")
+async def read_item(item_id: int = Path(
+    ..., 
+    title="The ID of the item"), x_custom_header: str | None = Header(None)):
+    return {"item_id": item_id, "X-Custom-Header": x_custom_header}
