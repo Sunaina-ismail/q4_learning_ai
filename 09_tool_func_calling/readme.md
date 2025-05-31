@@ -6,7 +6,7 @@ A **function** is a defined set of steps or instructions that perform a specific
 It’s like a routine or habit you do repeatedly without having to think about each individual step.
 
 
-# For example,
+# For example:
  when you get ready for college, you follow a routine:  
 - Wake up  
 - Brush your teeth  
@@ -37,7 +37,7 @@ You don’t repeat all the instructions each time, you just call the function by
 
 Instead of running the task yourself, you send a request to that tool or service and wait for the result.
 
-# For example,
+# For example:
 You want to decorate your home for a celebration, but you don’t know how to arrange flowers. So you call a florist and say, “Please do the flower decoration.”
 
 You don’t do the task yourself; you ask the florist, a tool or expert, to handle it.
@@ -82,7 +82,7 @@ This is useful when:
 ###  Function Calling + Streaming:
 You can create a function that handles streaming yourself. for example, reading a file line by line, or processing real-time sensor data.
 
-```js
+```python
 
 readFileInChunks()
 
@@ -98,7 +98,7 @@ Some external tools or APIs stream data as it becomes available.
 # Example:
 When you use an AI tool like ChatGPT or a voice assistant, you don’t get the full response at once. The result appears word by word, that’s streaming.
 
-```js
+```python
 
 callAIResponseTool()
 ```
